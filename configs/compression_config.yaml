@@ -1,0 +1,24 @@
+defaults:
+  - _self_
+
+model:
+  name: "laion/clap-htsat-fused"
+
+compression:
+  quantization:
+    enabled: true
+    dtype: "qint8"
+  pruning:
+    enabled: true
+    amount: 0.3
+  distillation:
+    enabled: false
+    steps: 10
+    lr: 1e-5
+    batch_size: 2
+    duration_seconds: 10
+  triton:
+    enabled: false  # Set to true if Triton is available
+
+output:
+  compressed_model_path: "experiments/compressed_model"

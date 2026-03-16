@@ -1,0 +1,23 @@
+defaults:
+  - _self_
+
+model:
+  name: "laion/clap-htsat-fused"
+
+dataset:
+  name: "hf-internal-testing/librispeech_asr_dummy"
+  split: "validation"
+
+evaluation:
+  batch_size: 16
+  synthetic_runs: 20
+
+output:
+  compressed_model_path: "experiments/compressed_model"
+  finetuned_model_path: "experiments/finetuned_model"
+
+logging:
+  use_wandb: false
+
+project:
+  name: "multimodal-compression"

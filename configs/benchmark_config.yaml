@@ -1,0 +1,45 @@
+defaults:
+  - _self_
+
+model:
+  name: "laion/clap-htsat-fused"
+
+dataset:
+  name: "hf-internal-testing/librispeech_asr_dummy"
+  split: "validation"
+
+evaluation:
+  batch_size: 16
+
+benchmark:
+  batch_size: 1
+  warmup_runs: 5
+  benchmark_runs: 20
+  tvm:
+    enabled: false          # set true when apache-tvm is installed
+    target: "llvm"          # "llvm" for CPU, "cuda" for GPU
+    export_path: "experiments/tvm"
+    opt_level: 3
+    warmup_runs: 5
+    benchmark_runs: 20
+  reporting:
+    enabled: true
+    output_dir: "experiments/reports"
+  onnx:
+    enabled: true
+    export_path: "experiments/onnx/model.onnx"
+    opset: 17
+    allow_float_export_fallback: true
+    warmup_runs: 5
+    benchmark_runs: 20
+    prefer_cuda: true
+
+output:
+  compressed_model_path: "experiments/compressed_model"
+  finetuned_model_path: "experiments/finetuned_model"
+
+logging:
+  use_wandb: false
+
+project:
+  name: "multimodal-compression-benchmark"

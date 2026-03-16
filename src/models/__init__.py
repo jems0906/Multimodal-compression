@@ -1,0 +1,1 @@
+from .model import MultimodalModel, load_model

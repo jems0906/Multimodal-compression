@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.pyo
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Package build artifacts
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Test & coverage artifacts
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.tox/
+.hypothesis/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Environment files
+.env
+.env.*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
+pip-log.txt
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Experiment outputs (generated at runtime)
+experiments/
+
+# Hydra outputs
+outputs/
+multirun/

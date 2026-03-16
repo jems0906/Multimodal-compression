@@ -1,0 +1,4 @@
+failed_alert_threshold: 1
+failed_critical_threshold: 3
+cancel_pending_alert_threshold: 1
+stale_active_minutes: 5
